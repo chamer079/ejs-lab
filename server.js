@@ -51,11 +51,14 @@ const RESTAURANT = {
   }
   
 
-app.get("/", (req, res) => {
+app.get('/', (req, res) => {
     // res.send("Home Test")
     res.render("home.ejs", {RESTAURANT})
 })
 
+app.get('/menu', (req, res) => {
+    res.render("menu.ejs", {RESTAURANT})
+})
 
 app.listen(3000, () => {
     console.log("Listening to PORT 3000")

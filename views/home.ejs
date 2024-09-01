@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= RESTAURANT.name %></title>
 </head>
-<body>
+<body
+  <%- include('./partials/nav') %>
   <h1>Home Page</h1>
   <h2><%= RESTAURANT.name %></h2> 
   <ul>
@@ -13,9 +14,9 @@
     <li><%= RESTAURANT.phone %></li>
   </ul>
   <% if(RESTAURANT.isOpen === true){ %>
-    <p>Yes we are open!</p>
+    <h3>Yes we are open!</h3>
     <% } else{ %>
-        <p>Sorry, we are closed!</p>
+        <h3>Sorry, we are closed!</h3>
     <% } %>
 </body>
 </html>
