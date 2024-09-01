@@ -60,6 +60,12 @@ app.get('/menu', (req, res) => {
     res.render("menu.ejs", {RESTAURANT})
 })
 
+app.get('/menu/:category', (req, res) => {
+    let menuItems = req.params.category
+    
+    res.render("category.ejs", menuItems)
+})
+
 app.listen(3000, () => {
     console.log("Listening to PORT 3000")
 })
