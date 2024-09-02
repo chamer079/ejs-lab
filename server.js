@@ -62,12 +62,15 @@ app.get('/menu', (req, res) => {
 
 app.get('/menu/:category', (req, res) => {
     let foodCategory = req.params.category
-    console.log(req.params.category)
-    const menuItems = RESTAURANT.menu.filter((menuItem) =>{
-        foodCategory === menuItem.category
-    })
+    console.log(foodCategory)
+    const menuItems = RESTAURANT.menu.filter((menuItem) => {
+    menuItem.category === foodCategory        
+})
+console.log(menuItems.name)
     
-    res.render("category.ejs", menuItems)
+    res.render("category.ejs", {
+        menuItems: menuItems,
+    foodCategory: foodCategory})
 })
 
 app.listen(3000, () => {
