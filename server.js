@@ -63,14 +63,21 @@ app.get('/menu', (req, res) => {
 app.get('/menu/:category', (req, res) => {
     let foodCategory = req.params.category
     console.log(foodCategory)
+
     const menuItems = RESTAURANT.menu.filter((menuItem) => {
-    menuItem.category === foodCategory        
+    if(menuItem.category === foodCategory){
+      return menuItem
+    }        
+
+
 })
-console.log(menuItems.name)
+console.log("menuItemtest", menuItems)
+// console.log(RESTAURANT.menu)
     
     res.render("category.ejs", {
-        menuItems: menuItems,
-    foodCategory: foodCategory})
+        menuItems,
+        foodCategory
+    })
 })
 
 app.listen(3000, () => {
