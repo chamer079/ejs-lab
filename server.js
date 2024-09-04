@@ -71,12 +71,11 @@ app.get('/menu/:category', (req, res) => {
 
 
 })
-console.log("menuItemtest", menuItems)
-// console.log(RESTAURANT.menu)
     
     res.render("category.ejs", {
         menuItems,
-        foodCategory
+        foodCategory, 
+
     })
 })
 
