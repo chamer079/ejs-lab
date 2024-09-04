@@ -68,8 +68,6 @@ app.get('/menu/:category', (req, res) => {
     if(menuItem.category === foodCategory){
       return menuItem
     }        
-
-
 })
     
     res.render("category.ejs", {
