@@ -8,17 +8,27 @@
 <body>
   <%- include('./partials/nav') %>
   <h1>Full Menu</h1>
+
+  <h2>Mains</h2>
   <% RESTAURANT.menu.forEach((item) => { %>
     <% if(item.category === "mains"){ %>
-      <h2>Mains</h2>
       <pre><%= item.name %>   $<%= item.price %>   Rating:<%= item.rating %> 
         Description:<%= item.details %></pre>
-    <% } else if(item.category === "desserts"){ %>
-      <h2>Desserts</h2>
+      <% } %>  
+    <% }) %>      
+
+
+  <h2>Desserts</h2>
+  <% RESTAURANT.menu.forEach((item) => { %>      
+    <% if(item.category === "desserts"){ %>
       <pre><%= item.name %>   $<%= item.price %>   Rating:<%= item.rating %> 
         Description:<%= item.details %></pre>
-    <% } else { %>
-      <h2>Sides</h2>
+      <% } %>  
+  <% }) %>
+
+  <h2>Sides</h2>
+  <% RESTAURANT.menu.forEach((item) => { %>
+    <% if(item.category === "sides"){ %>
       <pre><%= item.name %>   $<%= item.price %>   Rating:<%= item.rating %> 
         Description:<%= item.details %></pre>
     <% } %>
