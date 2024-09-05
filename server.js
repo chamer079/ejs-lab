@@ -62,7 +62,7 @@ app.get('/menu', (req, res) => {
 
 app.get('/menu/:category', (req, res) => {
     let foodCategory = req.params.category
-    console.log(foodCategory)
+    // console.log(foodCategory)
 
     const menuItems = RESTAURANT.menu.filter((menuItem) => {
     if(menuItem.category === foodCategory){

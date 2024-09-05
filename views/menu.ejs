@@ -11,7 +11,7 @@
 
   <h2>Mains</h2>
   <% RESTAURANT.menu.forEach((item) => { %>
-    <% if(item.category === "mains"){ %>
+    <% if(item.category === "mains" && item.rating ){ %>
       <pre><%= item.name %>   $<%= item.price %>   Rating:<%= item.rating %> 
         Description:<%= item.details %></pre>
       <% } %>  
